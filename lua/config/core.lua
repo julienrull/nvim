@@ -11,11 +11,11 @@ vim.keymap.set('n', '<Leader>p', '<cmd>bprev<cr>')
 vim.keymap.set('n', '<Leader>d', '<cmd>bdelete<cr>')
 vim.keymap.set('n', '<Leader>e', '<cmd>Oil<cr>')
 
-if vim.uv.os_uname().sysname ~= 'Windows' then
+if vim.uv.os_uname().sysname ~= 'Windows_NT' then
     vim.keymap.set('n', '<Leader>br', '<cmd>!./run.sh<cr>')
     vim.keymap.set('n', '<Leader>bb', '<cmd>!./build.sh<cr>')
 else
-    vim.keymap.set('n', '<Leader>br', '<cmd>!./run.bat<cr>')
-    vim.keymap.set('n', '<Leader>bb', '<cmd>!./build.bat<cr>')
+    vim.keymap.set('n', '<Leader>br', '<cmd>!.\\run.bat<cr>')
+    vim.keymap.set('n', '<Leader>bb', '<cmd>!.\\build.bat<cr>')
 end
 
