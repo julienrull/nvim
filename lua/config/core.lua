@@ -11,6 +11,12 @@ vim.keymap.set('n', '<Leader>p', '<cmd>bprev<cr>')
 vim.keymap.set('n', '<Leader>d', '<cmd>bdelete<cr>')
 vim.keymap.set('n', '<Leader>e', '<cmd>Oil<cr>')
 
+--vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
+--vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
+--vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
+--vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
+
+
 if vim.uv.os_uname().sysname ~= 'Windows_NT' then
     vim.keymap.set('n', '<Leader>br', '<cmd>!./run.sh<cr>')
     vim.keymap.set('n', '<Leader>bb', '<cmd>!./build.sh<cr>')
