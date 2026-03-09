@@ -37,6 +37,7 @@ require("lazy").setup({
   },
 })
 
+
 -- CORE
 vim.filetype.add({
   extension = {
@@ -116,6 +117,8 @@ vim.keymap.set("n", "<leader>rc", function()
     end
   end)
 end)
+
+vim.cmd.colorscheme("gruber-darker")
 
 --vim.keymap.set("n", "<leader>rr", function()
 --  run_in_oil_dir("make")

@@ -1,9 +1,8 @@
 return { 
-    "ellisonleao/gruvbox.nvim", 
+    "blazkowolf/gruber-darker.nvim", 
     priority = 1000,
     config = function()
         --vim.cmd.colorscheme("gruber-darker")
-        vim.cmd.colorscheme("gruvbox")
     end,
 } 
 --return { 
