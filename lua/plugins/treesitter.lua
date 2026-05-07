@@ -1,13 +1,8 @@
-return {
-  "nvim-treesitter/nvim-treesitter",
-  branch = "master",
-  build = ":TSUpdate",
-  lazy = false,
-  opts = {
-    -- toute ta config actuelle...
-    highlight = { enable = true },
+vim.pack.add({
+  { 
+    src = 'https://github.com/nvim-treesitter/nvim-treesitter', 
+    version = 'main' 
   },
-  config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
-  end,
-}
+})
+
+
