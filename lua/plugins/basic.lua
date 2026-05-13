@@ -4,9 +4,12 @@ require('vim._core.ui2').enable({})
 
 -- Basic settings
 
+vim.opt.clipboard = "unnamedplus"
+
 vim.opt.guicursor = "a:block"
 
 vim.opt.numberwidth = 1
+
 
 vim.g.mapleader = ","
 -- Prevents showing extra messages when using completion
@@ -66,3 +69,9 @@ vim.keymap.set("n", "<leader>rk",    "<CMD>resize +2<CR>",          { desc = "In
 vim.keymap.set("n", "<leader>rj",  "<CMD>resize -2<CR>",          { desc = "Decrease height" })
 vim.keymap.set("n", "<leader>rh",  "<CMD>vertical resize -2<CR>", { desc = "Decrease width" })
 vim.keymap.set("n", "<leader>rl", "<CMD>vertical resize +2<CR>", { desc = "Increase width" })
+
+if vim.g.neovide then
+    vim.keymap.set({ "n", "v" }, "<C-=>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+    vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+    vim.keymap.set({ "n", "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+end
