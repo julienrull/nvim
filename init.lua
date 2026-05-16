@@ -4,5 +4,3 @@ require('plugins.treesitter')
 require('plugins.color')
 require('plugins.toggleterm')
 require('plugins.mini')
-
-

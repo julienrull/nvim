@@ -1,17 +1,5 @@
 vim.pack.add({ 'https://github.com/akinsho/toggleterm.nvim' })
 
-if vim.fn.has('win32') == 1 then
-  vim.opt.shell = "C:\\Users\\julie\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShell_8wekyb3d8bbwe\\pwsh.exe"
-  vim.opt.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
-  vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
-  vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-  vim.opt.shellquote = ""
-  vim.opt.shellxquote = ""
-else
-  vim.opt.shell = "zsh"
-end
-
-
 require('toggleterm').setup({
   size = 15,
   open_mapping = [[<C-t>]],

@@ -4,6 +4,11 @@ require('vim._core.ui2').enable({})
 
 -- Basic settings
 
+--vim.o.shellquote = ""
+--vim.o.shellxquote = ""
+--vim.o.shellpipe = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+--vim.o.shellredir = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
+
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.guicursor = "a:block"
