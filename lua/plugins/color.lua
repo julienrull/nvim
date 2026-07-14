@@ -1,8 +1,4 @@
-vim.pack.add({ 'https://github.com/thimc/gruber-darker.nvim.git' })
+vim.pack.add({ 'https://github.com/sainnhe/gruvbox-material.git' })
 
-require('gruber-darker').setup({
- transparent = true, -- removes the background
-})
-
-vim.cmd.colorscheme('gruber-darker')
-
+vim.g.gruvbox_material_enable_italic = true
+vim.cmd.colorscheme('gruvbox-material')
