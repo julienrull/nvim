@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "codediff.nvim": {
+      "rev": "76ff1b13f0bcba655dca85cea1ef0df877a53c0f",
+      "src": "https://github.com/esmuellert/codediff.nvim"
+    },
     "gruber-darker.nvim": {
       "rev": "1793c0929ca965430410f7ec578272a4af9226ee",
       "src": "https://github.com/thimc/gruber-darker.nvim.git"
@@ -7,6 +11,14 @@
     "gruvbox-material": {
       "rev": "11d779b26a9ab2b3db8c22c6ac9fb6e8ed4fea79",
       "src": "https://github.com/sainnhe/gruvbox-material.git"
+    },
+    "gruvbox.nvim": {
+      "rev": "154eb5ff5b96d0641307113fa385eaf0d36d9796",
+      "src": "https://github.com/ellisonleao/gruvbox.nvim"
+    },
+    "jai.vim": {
+      "rev": "591aa0a75e9bb859028248b65a1a38d46b8d8576",
+      "src": "https://github.com/rluba/jai.vim"
     },
     "mason.nvim": {
       "rev": "cb8445f8ce85d957416c106b780efd51c6298f89",
