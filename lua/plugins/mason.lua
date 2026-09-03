@@ -14,11 +14,13 @@ vim.diagnostic.config({
     underline = false,
 })
 
-vim.keymap.set("n", "<leader>l", vim.diagnostic.open_float, {
+-- gl et non <leader>l : <leader>l est deja la navigation vers la fenetre
+-- de droite dans basic.lua (ce fichier etant charge apres, il l'ecrasait)
+vim.keymap.set("n", "gl", vim.diagnostic.open_float, {
     desc = "Show diagnostic",
 })
 
-vim.keymap.set("n", "<leader>lh", function()
+vim.keymap.set("n", "<leader>th", function()
     local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
 
     vim.lsp.inlay_hint.enable(not enabled, {

@@ -1,19 +1,6 @@
--- Put this at the top of 'init.lua'
-local path_package = vim.fn.stdpath('data') .. '/site'
-local mini_path = path_package .. '/pack/deps/start/mini.nvim'
-if not vim.loop.fs_stat(mini_path) then
-  vim.cmd('echo "Installing `mini.nvim`" | redraw')
-  local clone_cmd = {
-    'git', 'clone', '--filter=blob:none',
-    -- Uncomment next line to use 'stable' branch
-    -- '--branch', 'stable',
-    'https://github.com/nvim-mini/mini.nvim', mini_path
-  }
-  vim.fn.system(clone_cmd)
-  vim.cmd('packadd mini.nvim | helptags ALL')
-  vim.cmd('echo "Installed `mini.nvim`" | redraw')
-end
-
+vim.pack.add({
+  'https://github.com/nvim-mini/mini.nvim',
+})
 
 require('mini.basics').setup()
 require('mini.icons').setup()
@@ -23,93 +10,27 @@ require('mini.statusline').setup()
 require('mini.completion').setup()
 require('mini.notify').setup()
 require('mini.pick').setup()
---require('mini.files').setup()
---require('mini.visits').setup()
---require('mini.starter').setup()
 
+local extra = require('mini.extra')
 
-vim.keymap.set('n', '<leader>ff', MiniPick.builtin.files)
-vim.keymap.set('n', '<leader>fg', MiniPick.builtin.grep_live)
-vim.keymap.set('n', '<leader>fb', MiniPick.builtin.buffers)
+-- Pickers
+vim.keymap.set('n', '<leader>ff', MiniPick.builtin.files, { desc = 'Find files' })
+vim.keymap.set('n', '<leader>fg', MiniPick.builtin.grep_live, { desc = 'Live grep' })
+vim.keymap.set('n', '<leader>fb', MiniPick.builtin.buffers, { desc = 'Find buffers' })
 
-local extra = require("mini.extra")
+-- Pickers LSP
+vim.keymap.set('n', '<leader>ss', function()
+  extra.pickers.lsp({ scope = 'document_symbol' })
+end, { desc = 'Document symbols' })
 
--- Symbols in the current file
-vim.keymap.set("n", "<leader>ss", function()
-    extra.pickers.lsp({ scope = "document_symbol" })
-end, { desc = "Document symbols" })
+vim.keymap.set('n', '<leader>sS', function()
+  extra.pickers.lsp({ scope = 'workspace_symbol_live' })
+end, { desc = 'Workspace symbols' })
 
--- Symbols in the whole workspace
-vim.keymap.set("n", "<leader>sS", function()
-    extra.pickers.lsp({ scope = "workspace_symbol_live" })
-end, { desc = "Workspace symbols" })
+vim.keymap.set('n', '<leader>sr', function()
+  extra.pickers.lsp({ scope = 'references' })
+end, { desc = 'Symbol references' })
 
--- References to symbol under cursor
-vim.keymap.set("n", "<leader>sr", function()
-    extra.pickers.lsp({
-        scope = "references",
-    })
-end, {
-    desc = "Symbol references",
-})
-
--- Definitions
-vim.keymap.set("n", "<leader>sd", function()
-    extra.pickers.lsp({
-        scope = "definition",
-    })
-end, {
-    desc = "Symbol definition",
-})
-
---vim.keymap.set("n", "<leader>e", function()
---  local mf = require("mini.files")
---  if not mf.close() then
---    mf.open(vim.api.nvim_buf_get_name(0))
---  end
---end, { desc = "Toggle mini.files" })
-
--- Dans mini.files, appuie sur un raccourci pour changer le cwd
---vim.api.nvim_create_autocmd("User", {
---  pattern = "MiniFilesBufferCreate",
---  callback = function(args)
---    vim.keymap.set("n", "gc", function()
---      local entry = require("mini.files").get_fs_entry()
---      if entry then
---        local dir = entry.fs_type == "directory" and entry.path 
---                    or vim.fn.fnamemodify(entry.path, ":h")
---        vim.cmd("cd " .. dir)
---        vim.notify("cwd: " .. dir)
---      end
---    end, { buffer = args.data.buf_id })
---  end,
---})
-
-
----- Symbols in the current file
---vim.keymap.set("n", "<leader>ss", function()
---    extra.pickers.lsp({ scope = "document_symbol" })
---end, { desc = "Document symbols" })
---
----- Symbols in the whole workspace
---vim.keymap.set("n", "<leader>sS", function()
---    extra.pickers.lsp({ scope = "workspace_symbol_live" })
---end, { desc = "Workspace symbols" })
---
----- References to symbol under cursor
---vim.keymap.set("n", "<leader>sr", function()
---    extra.pickers.lsp({
---        scope = "references",
---    })
---end, {
---    desc = "Symbol references",
---})
---
----- Definitions
---vim.keymap.set("n", "<leader>sd", function()
---    extra.pickers.lsp({
---        scope = "definition",
---    })
---end, {
---    desc = "Symbol definition",
---})
+vim.keymap.set('n', '<leader>sd', function()
+  extra.pickers.lsp({ scope = 'definition' })
+end, { desc = 'Symbol definition' })

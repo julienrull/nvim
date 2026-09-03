@@ -1,7 +1,6 @@
 require('plugins.basic')
 require('plugins.treesitter')
 require('plugins.color')
-require('plugins.toggleterm')
 require('plugins.mason')
 require('plugins.mini')
 require('plugins.neogit')

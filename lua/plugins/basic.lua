@@ -4,11 +4,6 @@ require('vim._core.ui2').enable({})
 
 -- Basic settings
 
---vim.o.shellquote = ""
---vim.o.shellxquote = ""
---vim.o.shellpipe = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
---vim.o.shellredir = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
-
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.guicursor = "a:block"
@@ -16,7 +11,7 @@ vim.opt.guicursor = "a:block"
 vim.opt.numberwidth = 1
 
 
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 -- Prevents showing extra messages when using completion
 vim.opt.shortmess:append("c")
 -- Sets the height of the command line area at the bottom
@@ -49,9 +44,6 @@ vim.opt.smartindent = true
 vim.opt.smarttab = true
 
 vim.opt.wrap = true
-
-
-vim.g.mapleader = " "
 
 -- Buffer navigation
 vim.keymap.set("n", "<leader>n", "<CMD>bnext<CR>",   { desc = "Next buffer" })
