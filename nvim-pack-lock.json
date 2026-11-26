@@ -20,6 +20,10 @@
       "rev": "591aa0a75e9bb859028248b65a1a38d46b8d8576",
       "src": "https://github.com/rluba/jai.vim"
     },
+    "lush.nvim": {
+      "rev": "9c60ec2279d62487d942ce095e49006af28eed6e",
+      "src": "https://github.com/rktjmp/lush.nvim"
+    },
     "mason-lspconfig.nvim": {
       "rev": "67029ccdac1ef8941e13b826417bc0ffac24cc86",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
@@ -27,6 +31,10 @@
     "mason.nvim": {
       "rev": "cb8445f8ce85d957416c106b780efd51c6298f89",
       "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mini.nvim": {
+      "rev": "9d01f392b33fb2ba36fbc87fc0bf4453e63ffb0a",
+      "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "neogit": {
       "rev": "99326a1310fb2d616b455d2fd16d01bf00682f06",
@@ -56,6 +64,14 @@
     "vcvars.vim": {
       "rev": "8c34d9982bf6006adf6ffceca1de9ca5134a80d9",
       "src": "https://github.com/hattya/vcvars.vim.git"
+    },
+    "vim-sjson": {
+      "rev": "5c1ee003665186c0e5d25293e9979c3274b063a0",
+      "src": "https://github.com/vim-scripts/vim-sjson"
+    },
+    "zenbones.nvim": {
+      "rev": "8304d8df9b823ff11e103afa62f38c39f534abe6",
+      "src": "https://github.com/zenbones-theme/zenbones.nvim"
     }
   }
 }

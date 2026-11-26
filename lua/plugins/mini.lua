@@ -8,8 +8,21 @@ require('mini.pairs').setup()
 require('mini.cmdline').setup()
 require('mini.statusline').setup()
 require('mini.completion').setup()
-require('mini.notify').setup()
+--require('mini.notify').setup()
 require('mini.pick').setup()
+require("mini.extra").setup()
+require("mini.bracketed").setup()
+
+vim.keymap.set("n", "<M-j>", function() mb.diagnostic("forward") end,  { desc = "Diagnostic suivant" })
+vim.keymap.set("n", "<M-k>", function() mb.diagnostic("backward") end, { desc = "Diagnostic précédent" })
+vim.keymap.set("n", "<M-n>", function() mb.quickfix("forward") end,    { desc = "Erreur suivante (quickfix)" })
+vim.keymap.set("n", "<M-p>", function() mb.quickfix("backward") end,   { desc = "Erreur précédente (quickfix)" })
+
+vim.keymap.set("n", "<leader>xd", "<cmd>Pick diagnostic scope='current'<cr>", { desc = "Diagnostics (buffer)" })
+vim.keymap.set("n", "<leader>xD", "<cmd>Pick diagnostic scope='all'<cr>", { desc = "Diagnostics (tous)" })
+vim.keymap.set("n", "<leader>xq", "<cmd>Pick list scope='quickfix'<cr>", { desc = "Quickfix" })
+
+
 
 local extra = require('mini.extra')
 

@@ -2,6 +2,19 @@
 
 require('vim._core.ui2').enable({})
 
+vim.filetype.add({
+  extension = {
+    fs = "glsl",
+    vs = "glsl",
+    -- éventuellement d'autres extensions courantes :
+    frag = "glsl",
+    vert = "glsl",
+    geom = "glsl",
+    comp = "glsl",
+  },
+})
+
+
 -- Basic settings
 
 vim.opt.clipboard = "unnamedplus"
@@ -10,6 +23,7 @@ vim.opt.guicursor = "a:block"
 
 vim.opt.numberwidth = 1
 
+--vim.opt.makeprg = "just"
 
 vim.g.mapleader = " "
 -- Prevents showing extra messages when using completion
@@ -48,7 +62,10 @@ vim.opt.wrap = true
 -- Buffer navigation
 vim.keymap.set("n", "<leader>n", "<CMD>bnext<CR>",   { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>p", "<CMD>bprev<CR>",   { desc = "Prev buffer" })
-vim.keymap.set("n", "<leader>d", "<CMD>bdelete<CR>", { desc = "Delete buffer" })
+--vim.keymap.set("n", "<leader>d", "<CMD>bdelete<CR>", { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>d", function() 
+  require("mini.bufremove").delete()
+end, { desc = "Delete buffer (without closing window)" })
 
 -- Window navigation
 vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Move to left window" })
